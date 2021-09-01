@@ -30,8 +30,6 @@ Die unter „Spielvarianten“ genannten abweichenden Regeln bleiben außer
 Betracht.
 
 Zum Verständnis sei noch angemerkt:
-  * Steine, die auf Zielfeldern (a, b, c, d) stehen, dürfen nicht mehr
-    bewegt werden
   * Wenn kein Stein bewegt werden kann, verfällt der Zug
   * Für die Simulation mit zwei Spielern werden gegenüberliegende Farben
     verwendet, also also gelb und rot oder grün und schwarz
