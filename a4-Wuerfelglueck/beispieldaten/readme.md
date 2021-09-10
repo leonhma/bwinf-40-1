@@ -33,3 +33,6 @@ Zum Verständnis sei noch angemerkt:
   * Wenn kein Stein bewegt werden kann, verfällt der Zug
   * Für die Simulation mit zwei Spielern werden gegenüberliegende Farben
     verwendet, also also gelb und rot oder grün und schwarz
+  * Es kann auch innerhalb der Zielfelder weitergezogen werden. (Z. B.
+    mit einem Würfelwurf 1 von Feld a auf Feld b der eigenen
+    Zielfelder.)
