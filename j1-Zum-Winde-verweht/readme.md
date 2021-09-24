@@ -2,18 +2,16 @@
 
 *J1, Team-ID: 00353, Team-Name: U+1F947, Leonhard Masche, 24.09.2021*
 
-
 ## Inhaltsverzeichnis
+
 1. [Lösungsidee](#lösungsidee)
 2. [Umsetzung](#umsetzung)
 3. [Beispiele](#beispiele)
 4. [Quellcode](#quellcode)
 
-
 ## Lösungsidee
 
 Zuerst bietet es sich an, die Koordinaten der Häuser und der Windräder in Listen zu speichern. Man kann dann mit zwei ineninander verschachtelten for-loops für jedes Windrad und jedes Haus die Entfernung mithilfe des Satz des Pythagoras berechnen. Die kleinste ermittelte Entfernung pro Windrad wird durch 10 geteilt, auf 2 Stellen nach dem Komma gerundet, und zusammen mit den Koordinaten des Windrads ausgegeben.
-
 
 ## Umsetzung
 
@@ -21,16 +19,16 @@ Das Programm ist in der Sprache Python umgesetzt. Der Aufgabenordner enthält ne
 
 Wird das Programm gestartet, wird zuerst eine Eingabe in Form einer einstelligen Zahl erwartet, um ein bestimmtes Beispiel auszuwählen. *(Das heißt: `1` für Beispiel `landkreis1.txt`)*
 
-Nun wird die Logik des Programms angewandt und eine Ausgabe erscheint in der Kommandozeile.
-
+Nun wird die Logik des Programms angewandt und die Ausgabe erscheint in der Kommandozeile.
 
 ## Beispiele
 
-Hier wird das Programm auf die vier Beispiele von der Website angewendet:
+Hier wird das Programm auf die vier Beispiele aus dem Git-Repo angewendet:
 
 ---
 
 `landkreis1.txt`
+
 ```
 12 3
 -82 -315
@@ -51,6 +49,7 @@ Hier wird das Programm auf die vier Beispiele von der Website angewendet:
 ```
 
 Ausgabe zu `landkreis1.txt`
+
 ```
 --------------------------------
 Standort (1242|-593): 48.52m
@@ -62,6 +61,7 @@ Standort (1720|401): 72.41m
 ---
 
 `landkreis2.txt`
+
 ```
 94 15
 1157 3693
@@ -89,6 +89,7 @@ Standort (1720|401): 72.41m
 ```
 
 Ausgabe zu `landkreis2.txt`
+
 ```
 --------------------------------
 Standort (359|20): 115.16m
@@ -112,6 +113,7 @@ Standort (-340|-343): 177.04m
 ---
 
 `landkreis3.txt`
+
 ```
 2382 16
 8801 6661
@@ -139,6 +141,7 @@ Standort (-340|-343): 177.04m
 ```
 
 Ausgabe zu `landkreis3.txt`
+
 ```
 --------------------------------
 Standort (0|0): 451.57m
@@ -163,6 +166,7 @@ Standort (1620|1350): 261.02m
 ---
 
 `landkreis4.txt`
+
 ```
 9993 30
 -4147 8575
@@ -190,6 +194,7 @@ Standort (1620|1350): 261.02m
 ```
 
 Ausgabe zu `landkreis4.txt`
+
 ```
 --------------------------------
 Standort (-4147|8575): 0.0m
@@ -224,7 +229,6 @@ Standort (6576|15697): 241.01m
 Standort (-12074|5974): 625.4m
 --------------------------------
 ```
-
 
 ## Quellcode
 
