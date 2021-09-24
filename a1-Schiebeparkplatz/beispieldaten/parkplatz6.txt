@@ -1,7 +1,0 @@
-A H
-4
-I 0
-J 2
-K 4
-L 6
-Beispieldatei für eine unmogliche Situation

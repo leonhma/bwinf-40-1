@@ -101,4 +101,5 @@ for space, car in enumerate(parked):
         output += ', '.join(options[0][1][::-1])
 
     print(output)
+
 print('--------------------------------')
