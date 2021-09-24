@@ -51,11 +51,9 @@ Hier wird das Programm auf die vier Beispiele aus dem Git-Repo angewendet:
 Ausgabe zu `landkreis1.txt`
 
 ```
---------------------------------
 Standort (1242|-593): 48.52m
 Standort (-1223|-1479): 158.98m
 Standort (1720|401): 72.41m
---------------------------------
 ```
 
 ---
@@ -91,7 +89,6 @@ Standort (1720|401): 72.41m
 Ausgabe zu `landkreis2.txt`
 
 ```
---------------------------------
 Standort (359|20): 115.16m
 Standort (2|-773): 201.25m
 Standort (315|-213): 138.85m
@@ -107,7 +104,6 @@ Standort (156|55): 118.28m
 Standort (-423|-93): 161.95m
 Standort (202|-219): 142.39m
 Standort (-340|-343): 177.04m
---------------------------------
 ```
 
 ---
@@ -143,7 +139,6 @@ Standort (-340|-343): 177.04m
 Ausgabe zu `landkreis3.txt`
 
 ```
---------------------------------
 Standort (0|0): 451.57m
 Standort (180|570): 393.79m
 Standort (360|1140): 336.7m
@@ -160,7 +155,6 @@ Standort (1080|-360): 440.31m
 Standort (1260|210): 380.54m
 Standort (1440|780): 320.78m
 Standort (1620|1350): 261.02m
---------------------------------
 ```
 
 ---
@@ -196,7 +190,6 @@ Standort (1620|1350): 261.02m
 Ausgabe zu `landkreis4.txt`
 
 ```
---------------------------------
 Standort (-4147|8575): 0.0m
 Standort (-6453|14307): 383.81m
 Standort (-8370|5831): 262.45m
@@ -227,7 +220,6 @@ Standort (6887|17263): 391.94m
 Standort (-3944|13584): 125.78m
 Standort (6576|15697): 241.01m
 Standort (-12074|5974): 625.4m
---------------------------------
 ```
 
 ## Quellcode
@@ -245,8 +237,6 @@ path = path.join(
 
 with open(path, 'r') as f:
     lines = f.read().split('\n')
-
-print('--------------------------------')
 
 
 # die Koordinaten in Form von Listen (`List`) speichern
@@ -267,6 +257,4 @@ for w_coord in windmills:
         if(distance < min_distance):
             min_distance = distance
     print(f'Standort ({w_coord[0]}|{w_coord[1]}): {round(min_distance/10, 2)}m')
-
-print('--------------------------------')
 ```

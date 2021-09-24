@@ -10,7 +10,7 @@ with open(path, 'r') as f:
     lines = f.read().split('\n')
 
 
-# Datenklasse aus meinem 'brainfuck' interpreter
+# Datenklasse aus einem anderen Projekt
 class ilist(list):
     def __init__(self, start=None, empty=None):
         if start is None:
@@ -48,7 +48,7 @@ for i in range(m):
     for prefs in matrix:
         # Anzahl der Änderungen wird inkrementiert,
         # wenn die Bewertung dieses Tages schlechter
-        # als die beste dieses Mitglieds ist
+        # als die beste Bewertung dieses Mitglieds ist
         if prefs[i] > min(prefs):
             neededchanges[i] += 1
 
