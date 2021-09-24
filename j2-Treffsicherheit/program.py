@@ -1,4 +1,15 @@
 # pylama:ignore=E501
+from os import path
+
+
+path = path.join(
+    path.dirname(path.abspath(__file__)),
+    f'beispieldaten/praeferenzen{input("Nummer des Beispiels eingeben: ")}.txt')
+
+with open(path, 'r') as f:
+    lines = f.read().split('\n')
+
+
 class ilist(list):
     def __init__(self, r=None, empty=None):
         if r is None:
@@ -21,9 +32,6 @@ class ilist(list):
         self._ensure_length(n)
         return super(ilist, self).__setitem__(n, val)
 
-
-with open(f'beispieldaten/praeferenzen{input("Nummer des Beispiels eingeben: ")}.txt', 'r') as f:
-    lines = f.read().split('\n')
 
 n, m = tuple(lines[0].split(' '))
 n, m = int(n), int(m)

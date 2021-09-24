@@ -1,9 +1,15 @@
 # pylama:ignore=E501
 import math
+from os import path
 
 
-with open(f'beispieldaten/landkreis{input("Nummer des Beispiels eingeben: ")}.txt', 'r') as f:
+path = path.join(
+    path.dirname(path.abspath(__file__)),
+    f'beispieldaten/landkreis{input("Nummer des Beispiels eingeben: ")}.txt')
+
+with open(path, 'r') as f:
     lines = f.read().split('\n')
+
 
 n_houses, n_windmills = tuple(lines[0].split(' '))
 n_houses, n_windmills = int(n_houses), int(n_windmills)

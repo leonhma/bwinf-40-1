@@ -1,14 +1,23 @@
 # pylama:ignore=C901,E501
-import string
+import string                                                                       # string constants
+from os import path                                                                 # path manipulation
 
 
-with open(f'beispieldaten/parkplatz{input("Nummer des Beispiels eingeben: ")}.txt', 'r') as f:
+path = path.join(
+    path.dirname(path.abspath(__file__)),
+    f'beispieldaten/parkplatz{input("Nummer des Beispiels eingeben: ")}.txt')       # get the path of the test file
+
+with open(path, 'r') as f:                                                          # open the test file
     lines = f.read().split('\n')
 
-spaces = lines[0].split(' ')
-letters = list(string.ascii_uppercase)
-bounds = (letters.index(spaces[0]), letters.index(spaces[1])+1)
-parked = letters[bounds[0]:bounds[1]]
+print('--------------------------------')                                           # print a seperator
+
+
+spaces = lines[0].split(' ')                                                        # get the two outer parking spaces (eg. 'A' and 'C')
+letters = list(string.ascii_uppercase)                                              # get a list of alphabetically ordered uppercase letters
+bounds = (letters.index(spaces[0]), letters.index(spaces[1])+1)                     # get the indexes of the outermost parking spaces
+parked = letters[bounds[0]:bounds[1]]                                               # get a list of all the applicable parking spaces
+
 
 blocking = dict()
 for i in range(int(lines[1])):
@@ -44,23 +53,25 @@ def get_movement(car, space_to_free):
 
 def squash_left(space_to_free, actions=None):
     if not actions:
-        actions = []
+        actions = [0, []]
     car = get_blocking(space_to_free)
     left, _ = get_movement(car, space_to_free)
-    actions.append(f'{car} {left} links')
+    actions[0] += left
+    actions[1].append(f'{car} {left} links')
     if not check_free(blocking[car]-left):
-        squash_left(blocking[car]-left, actions)
+        actions = squash_left(blocking[car]-left, actions)
     return actions
 
 
 def squash_right(space_to_free, actions=None):
     if not actions:
-        actions = []
+        actions = [0, []]
     car = get_blocking(space_to_free)
     _, right = get_movement(car, space_to_free)
-    actions.append(f'{car} {right} rechts')
+    actions[0] += right
+    actions[1].append(f'{car} {right} rechts')
     if not check_free(blocking[car]+right+1):
-        squash_right(blocking[car]+right+1, actions)
+        actions = squash_right(blocking[car]+right+1, actions)
     return actions
 
 
@@ -77,20 +88,17 @@ for space, car in enumerate(parked):
         if check_free(i):
             buffer_right += 1
 
-    # get how many spaces the first blocking car has to move
+    options = []
     car = get_blocking(space)
     if car is not None:
         left, right = get_movement(car, space)
 
-        if left == 1 and buffer_left >= 1:
-            output += ', '.join(squash_left(space)[::-1])
-        elif right == 1 and buffer_right >= 1:
-            output += ', '.join(squash_right(space)[::-1])
-        elif buffer_left >= left:
-            output += ', '.join(squash_left(space)[::-1])
-        elif buffer_right >= right:
-            output += ', '.join(squash_right(space)[::-1])
-        else:
-            output += 'Unmöglich!'
+        if buffer_left >= left:
+            options.append(squash_left(space))
+        if buffer_right >= right:
+            options.append(squash_right(space))
+        options.sort(key=lambda x: x[0])
+        output += ', '.join(options[0][1][::-1])
 
     print(output)
+print('--------------------------------')
