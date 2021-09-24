@@ -13,15 +13,15 @@
 
 ## Lösungsidee
 
-Aus den beiden Buchstaben in Zeile 1 in der Test-Datei wird eine Liste mit allen Großbuchstaben, die sich dazwischen befinden, erstellt. Für die blockierenden (querstehenden) Autos wird in einem Dictionary ihr Buckstabe mit ihrer Position assoziiert.
+Aus den beiden Buchstaben in Zeile 1 der Test-Datei wird eine Liste mit allen Großbuchstaben, die sich dazwischen befinden, erstellt. Für die blockierenden (querstehenden) Autos wird in einem Dictionary ihr Buchstabe mit ihrer Position assoziiert.
 
 Als erster Schritt wird berechnet, wieviel Platz zum Bewegen nach links und rechts verfügbar ist. Damit wird entschieden, welche Richtungen überhaupt beim Verschieben infrage kommen.
 
-Nun werden für beide Richtungen (wenn möglich), berechnet, weiviele 'Züge' gemacht werden müssen, um aus dem Stellpatz ausfahren zu können. Auch Kollisionen werden über einen Check in der `squash_left` und `squash_right` Funktion, und ihr rekursives Verhalten mitberechnet und diese Autos passend weiter verschoben.
+Nun werden für beide Richtungen (wenn möglich), berechnet, wieviele 'Züge' gemacht werden müssen, um aus dem Stellpatz ausfahren zu können. Auch Kollisionen werden über einen Check in der `squash_left` und `squash_right` Funktion, und ihr rekursives Verhalten bedacht und diese Autos passend weiter verschoben.
 
-Zuletzt werden die beiden Richtungen auf Basis der benötigten 'Züge' verglichen. Die Variante mit der geringsten Anzahl an Zügen wird formatiert und ausgegeben.
+Zuletzt werden die beiden Richtungen auf Basis der benötigten 'Züge' verglichen. Die Richtung mit der geringsten Anzahl an Zügen wird formatiert und ausgegeben.
 
-Diese Schritte wiederholen sich für jedes Auto aus der Liste.
+Diese Schritte wiederholen sich für jeden Stellplatz aus der Liste.
 
 
 ### Funktionen
