@@ -11,7 +11,7 @@
 
 ## Lösungsidee
 
-Zuerst bietet es sich an, die Koordinaten der Häuser und der Windräder in Listen zu speichern. Man kann dann mit zwei ineninander verschachtelten for-loops für jedes Windrad und jedes Haus die Entfernung mithilfe des Satz des Pythagoras berechnen. Die kleinste ermittelte Entfernung pro Windrad wird durch 10 geteilt, auf 2 Stellen nach dem Komma gerundet, und zusammen mit den Koordinaten des Windrads ausgegeben.
+Zuerst bietet es sich an, die Koordinaten der Häuser und der Windräder in Listen zu speichern. Man kann nun mit zwei ineninander verschachtelten for-loops für jedes Windrad und jedes Haus die Entfernung mithilfe des Satz des Pythagoras berechnen. Die kleinste ermittelte Entfernung pro Windrad wird durch 10 geteilt, auf 2 Stellen nach dem Komma gerundet, und zusammen mit den Koordinaten des Windrads ausgegeben.
 
 ## Umsetzung
 

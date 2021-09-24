@@ -12,7 +12,7 @@
 
 ## Lösungsidee
 
-Als erstes werden die Daten aus der ausgewählten Test-Datei in eine Matrix/zweidimensionales Array eingelesen. Mit einem for-loop wird nun über die Tage iteriert. Jedes Clique-Mitglied kann maximal eine benötigte Veränderung verursachen, da, wenn das Mitglied einen oder mehrere Tage besser bewertet, kann man die Bewertung des Tages auf `0`, also die bestmögliche, ändern. In einer seperaten Liste wird festgehalten, wieviele Mitglieder für jeden Tag einen anderen Tag besser bewertet haben. Diese Zahl gibt somit auch an, wieviele Änderungen an einem bestimmten Tag notwendig wären.
+Als erstes werden die Daten aus der ausgewählten Test-Datei in eine Matrix/zweidimensionales Array eingelesen. Mit einem for-loop wird nun über die einzelnen Tage iteriert. Jedes Clique-Mitglied kann maximal eine benötigte Veränderung verursachen, da, wenn das Mitglied einen oder mehrere Tage besser bewertet, man die Bewertung des jetzigen Tages auf `0`, also die bestmögliche, ändern kann. In einer seperaten Liste wird festgehalten, wie viele 'benötigte Änderungen' es an jedem Tag gibt. Eine 'benötigte Änderung' ist also der Fall, wenn die Bewertung des jetzigen Tages schlechter als die beste Bewertung dieses Mitglieds ist.
 
 Gibt es einen Termin mit `0` erforderlichen Änderungen, wird dieser als 'allseits beliebter Termin' ausgegeben. Gibt es diesen Termin nicht, wird das Minimum `m` an erforderlichen Änderungen ermittelt, und der früheste Tag mit `m` erforderlichen Änderungen ausgegeben.
 
