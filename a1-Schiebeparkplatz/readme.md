@@ -1,7 +1,6 @@
 # Schiebeparkplatz
 
-*A1, Team-ID: 00353, Team-Name: U+1F947, Leonhard Masche, 24.09.2021*
-
+❔ A1 👥 00353 🥇 U+1F947 🧑 Leonhard Masche 📆 24.09.2021
 
 ## Inhaltsverzeichnis
 1. [Lösungsidee](#lösungsidee)
