@@ -243,10 +243,9 @@ parked = letters[bounds[0]:bounds[1]]
 
 
 # dictionary aus blockierenden (querstehenden) Autos erstellen
-blocking = dict()
-for i in range(int(lines[1])):
-    line = lines[2+i]
-    blocking[line.split(' ')[0]] = int(line.split(' ')[1])
+blocking = {car: int(pos) for car, pos in [
+    [s for s in line.split(' ')]
+    for line in lines[2:][:int(lines[1])]]}
 
 
 def get_blocking(i):
@@ -263,21 +262,14 @@ def get_blocking(i):
 def check_free(i):
     # gibt `True` zurück, wenn die Position `i`
     # frei ist, sonst `False`
-    if (i - 1 in blocking.values() or
-            i in blocking.values()):
-        return False
-    return True
+    return i - 1 not in blocking.values() and i not in blocking.values()
 
 
 def get_movement(car, i):
     # gibt die Bewegung, die ein Auto `car` machen müsste,
     # um Position `i` freizugeben, zurück
-    left = 1
-    if(blocking[car] == i):
-        left = 2
-    right = 1
-    if(blocking[car] == i-1):
-        right = 2
+    left = 2 if (blocking[car] == i) else 1
+    right = 2 if (blocking[car] == i-1) else 1
     return left, right
 
 
@@ -309,20 +301,13 @@ def squash_right(i, actions=None):
     return actions
 
 
+bound_left, bound_right = bounds
 for space, car in enumerate(parked):
-    bound_left, bound_right = bounds
     output = f'{car}: '
 
     # berechnen, wie viel Platz in jede Richtung frei ist
-    buffer_left = 0
-    for i in range(bound_left, space):
-        if check_free(i):
-            buffer_left += 1
-    buffer_right = 0
-    for i in range(space+1, bound_right):
-        if check_free(i):
-            buffer_right += 1
-
+    buffer_left = sum(check_free(i) for i in range(bound_left, space))
+    buffer_right = sum(check_free(i) for i in range(space+1, bound_right))
     options = []
     car = get_blocking(space)
     # wenn dieser Parkplatz blockiert ist,
@@ -342,4 +327,5 @@ for space, car in enumerate(parked):
         output += ', '.join(options[0][1][::-1])
 
     print(output)
+
 ```

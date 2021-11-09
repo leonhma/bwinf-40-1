@@ -240,9 +240,9 @@ with open(path, 'r') as f:
 
 
 # die Koordinaten in Form von Listen (`List`) speichern
-n_houses, n_windmills = tuple(lines[0].split(' '))
-n_houses, n_windmills = int(n_houses), int(n_windmills)
-coords = [(int(line.split(' ')[0]), int(line.split(' ')[1])) for line in lines[1:n_houses+n_windmills+1]]
+n_houses, n_windmills = [int(i) for i in lines[0].split(' ')]
+coords = [[int(i) for i in line.split(' ')]
+          for line in lines[1:n_houses+n_windmills+1]]
 houses = coords[:n_houses]
 windmills = coords[n_houses:]
 
@@ -257,4 +257,5 @@ for w_coord in windmills:
         if(distance < min_distance):
             min_distance = distance
     print(f'Standort ({w_coord[0]}|{w_coord[1]}): {round(min_distance/10, 2)}m')
+
 ```

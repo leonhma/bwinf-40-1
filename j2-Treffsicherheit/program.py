@@ -35,13 +35,9 @@ class ilist(list):
 
 
 # die Datei einlesen
-n, m = tuple(lines[0].split(' '))
-n, m = int(n), int(m)
-matrix = []
-for line in lines[1:n+1]:
-    matrix.append([int(x) for x in line.split(' ')])
-
-
+n, m = [int(i) for i in lines[0].split(' ')]
+matrix = [[int(x) for x in line.split(' ')[:m]]
+          for line in lines[1:n+1]]
 # durch die Tage iterieren
 neededchanges = ilist(empty=0)
 for i in range(m):
