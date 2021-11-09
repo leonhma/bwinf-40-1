@@ -214,6 +214,39 @@ O: U 1 links
 P:
 ```
 
+---
+
+`parkplatz5.txt`
+
+```
+A O
+4
+P 2
+Q 4
+R 8
+S 12
+```
+
+Ausgabe zu `parkplatz5.txt`
+
+```
+A: 
+B: 
+C: P 2 links
+D: P 1 links
+E: Q 1 rechts
+F: P 1 links, Q 1 links
+G: 
+H: 
+I: R 1 rechts
+J: R 1 links
+K: 
+L: 
+M: S 1 rechts
+N: S 1 links
+O: 
+```
+
 
 
 
